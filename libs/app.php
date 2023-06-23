@@ -4,7 +4,7 @@
         {
             //echo"<p>Mi aplicacion MVC de WEB II";
             // Lógica en la URL
-            $url = isset($_GET['url']) ? $_GET['url'] : 'main';
+            $url = isset($_GET['url']) ? $_GET['url'] : 'startscreen';
             $url = explode("/", $url);
 
             //echo "<br>";

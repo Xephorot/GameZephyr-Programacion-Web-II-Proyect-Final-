@@ -1,0 +1,101 @@
+.header {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.subheader {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.row {
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.right-image {
+  width: 90%;
+  height: auto;
+}
+
+.smaller-image {
+  max-width: 400px;
+}
+
+.move-right {
+  transition: transform 0.3s ease-in-out;
+}
+
+.redirection {
+  position: absolute;
+  bottom: -30px;
+  left: 45%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.text-above-buttons {
+  margin-bottom: 10px;
+}
+
+.text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.text::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #000;
+  margin: 10px auto;
+}
+
+.form-container {
+  margin-bottom: 20px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 10px; /* Ajusta el espaciado superior de los botones */
+}
+
+/* Estilos personalizados para las imágenes */
+.image-container-left {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+}
+
+.image-container-right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}

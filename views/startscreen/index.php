@@ -4,6 +4,7 @@
   <title>GameZephyr</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="models/styles/styles.css">
+  <?php require "views/videobackground.php"?>
 </head>
 <body>
   <div class="container">

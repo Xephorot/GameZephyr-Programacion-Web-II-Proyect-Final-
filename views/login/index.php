@@ -4,6 +4,7 @@
   <title>GameZephyr</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="models/styles/styles.css">
+  <?php require "views/videobackground.php"?>
 </head>
 <body>
   <div class="container">
@@ -22,7 +23,7 @@
     <div class="button-container">
       <a href="#" class="button btn btn-primary btn-lg">Login</a>
       <a href="SignIn" class="button btn btn-primary btn-lg">Sign up</a>
-      <a href="#" class="button btn btn-primary btn-lg">LoginWithGoogle</a>
+      <a href="#" class="button btn btn-primary btn-lg">Login With Google</a>
     </div>
   </div>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -5,6 +5,7 @@
   <title>Sign In - GameZephyr</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="models/styles/styles.css">
+  <?php require "views/videobackground.php"?>
 </head>
 <body>
   <div class="container">

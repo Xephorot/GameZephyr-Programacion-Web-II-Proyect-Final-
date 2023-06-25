@@ -1,11 +1,19 @@
 <?php
 require_once 'libs/users.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['contrasena'];
+$users = new UsersLib();
+$usersList = $users->getUsers();
 
-    $users = new UsersLib();
+// Manejar la acción de edición
+if (isset($_POST['edit'])) {
+    $userId = $_POST['userId'];
+    $user = $users->getUserById($userId);
+}
+
+// Manejar la acción de crear o actualizar
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $password = isset($_POST['contrasena']) ? $_POST['contrasena'] : '';
 
     if (isset($_POST['create'])) {
         $users->createUser($email, $password);
@@ -16,11 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $userId = $_POST['userId'];
         $users->deleteUser($userId);
     }
-}
 
-$users = new UsersLib();
-$usersList = $users->getUsers();
+    // Recargar la lista de usuarios después de la acción
+    $usersList = $users->getUsers();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,20 +39,24 @@ $usersList = $users->getUsers();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Usuarios</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <?php require "views/videobackground.php"?>
 </head>
 <body>
     <div class="container mt-5">
         <form action="" method="POST">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" name="email" required>
+                <input type="text" class="form-control" id="email" name="email" value="<?php if (isset($user)) { echo $user['CorreoElectronico']; } ?>" required>
             </div>
             <div class="mb-3">
                 <label for="contrasena" class="form-label">Contraseña</label>
-                <input type="text" class="form-control" id="contrasena" name="contrasena" required>
+                <input type="text" class="form-control" id="contrasena" name="contrasena" value="<?php if (isset($user)) { echo $user['Contrasena']; } ?>" required>
             </div>
-            <button type="submit" class="btn btn-primary" name="create">Crear</button>
+            <?php if (isset($user)) : ?>
+                <input type="hidden" name="userId" value="<?php echo $user['ID_Usuario']; ?>">
+                <button type="submit" class="btn btn-primary" name="update">Actualizar</button>
+            <?php else : ?>
+                <button type="submit" class="btn btn-primary" name="create">Crear</button>
+            <?php endif; ?>
         </form>
 
         <h2>Usuarios registrados</h2>
@@ -63,9 +76,7 @@ $usersList = $users->getUsers();
                         <td>
                             <form action="" method="POST">
                                 <input type="hidden" name="userId" value="<?php echo $user['ID_Usuario']; ?>">
-                                <input type="hidden" name="email" value="<?php echo $user['CorreoElectronico']; ?>">
-                                <input type="hidden" name="contrasena" value="<?php echo $user['Contrasena']; ?>">
-                                <button type="submit" class="btn btn-primary" name="update">Editar</button>
+                                <button type="submit" class="btn btn-primary" name="edit">Editar</button>
                                 <button type="submit" class="btn btn-danger" name="delete">Eliminar</button>
                             </form>
                         </td>

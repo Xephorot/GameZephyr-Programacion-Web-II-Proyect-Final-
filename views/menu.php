@@ -11,7 +11,7 @@
             <a class="nav-link btn btn-white text-dark text-center" href="users">Users</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link btn btn-white text-dark text-center" href="#">Botón 2</a>
+            <a class="nav-link btn btn-white text-dark text-center" href="videogames">VideoGames</a>
         </li>
         <li class="nav-item">
             <a class="nav-link btn btn-white text-dark text-center" href="#">Botón 3</a>

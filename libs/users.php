@@ -13,6 +13,13 @@ class UsersLib extends Model {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getUserById($id) {
+        $query = "SELECT * FROM Usuarios WHERE ID_Usuario = ?";
+        $stmt = $this->db->connect()->prepare($query);
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     function createUser($email, $password) {
         $query = "INSERT INTO Usuarios (CorreoElectronico, Contrasena) VALUES (?, ?)";
         $stmt = $this->db->connect()->prepare($query);
@@ -30,6 +37,5 @@ class UsersLib extends Model {
         $stmt = $this->db->connect()->prepare($query);
         $stmt->execute([$id]);
     }
-    
 }
 ?>

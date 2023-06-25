@@ -20,7 +20,7 @@
             <div class="col-10">    
                 <!-- <h1 class="text-center mt-5">Estás en la página de Users</h1> -->
                 <div class="container mt-5">
-                    <?php require "views/form.php"?>
+                    <?php require "views/videogame.php"?>
                 </div>
             </div>
         </div>

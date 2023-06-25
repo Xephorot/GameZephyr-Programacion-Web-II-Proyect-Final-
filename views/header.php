@@ -2,13 +2,10 @@
   <div class="container d-flex justify-content-center">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="main">Inicio</a>
+        <a class="nav-link" href="main">Main Menu</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="categoria">Categoría</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="errores">Errores</a>
+        <a class="nav-link" href="search">Search</a>
       </li>
     </ul>
   </div>

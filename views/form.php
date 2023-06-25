@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $users->createUser($email, $password);
     } elseif (isset($_POST['update'])) {
         $userId = $_POST['userId'];
-        $users->updateUser($userId, $email, $password);
+        $users->updateUser($userId, $email, $password   );
     } elseif (isset($_POST['delete'])) {
         $userId = $_POST['userId'];
         $users->deleteUser($userId);
@@ -54,9 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <?php if (isset($user)) : ?>
                 <input type="hidden" name="userId" value="<?php echo $user['ID_Usuario']; ?>">
-                <button type="submit" class="btn btn-primary" name="update">Actualizar</button>
+                <button type="submit" class="btn btn-primary" name="update">Update</button>
             <?php else : ?>
-                <button type="submit" class="btn btn-primary" name="create">Crear</button>
+                <button type="submit" class="btn btn-primary" name="create">Create</button>
             <?php endif; ?>
         </form>
 
@@ -77,8 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <td>
                             <form action="" method="POST">
                                 <input type="hidden" name="userId" value="<?php echo $user['ID_Usuario']; ?>">
-                                <button type="submit" class="btn btn-primary" name="edit">Editar</button>
-                                <button type="submit" class="btn btn-danger" name="delete">Eliminar</button>
+                                <button type="submit" class="btn btn-primary" name="edit">Edit</button>
+                                <button type="submit" class="btn btn-danger" name="delete">Delete</button>
                             </form>
                         </td>
                     </tr>

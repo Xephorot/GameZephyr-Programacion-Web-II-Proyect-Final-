@@ -21,9 +21,23 @@ class UsersLib extends Model {
     }
 
     function createUser($email, $password) {
-        $query = "INSERT INTO Usuarios (CorreoElectronico, Contrasena) VALUES (?, ?)";
+        // Verificar si el correo electrónico ya está registrado
+        $query = "SELECT * FROM Usuarios WHERE CorreoElectronico = ?";
         $stmt = $this->db->connect()->prepare($query);
-        $stmt->execute([$email, $password]);
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            // El correo electrónico ya está registrado
+            return false;
+        } else {
+            // Crear la cuenta
+            $query = "INSERT INTO Usuarios (CorreoElectronico, Contrasena) VALUES (?, ?)";
+            $stmt = $this->db->connect()->prepare($query);
+            $stmt->execute([$email, $password]);
+
+            return true;
+        }
     }
     
     function updateUser($id, $email, $password) {
@@ -37,5 +51,20 @@ class UsersLib extends Model {
         $stmt = $this->db->connect()->prepare($query);
         $stmt->execute([$id]);
     }
+    function loginUser($email, $password) {
+        $query = "SELECT * FROM Usuarios WHERE CorreoElectronico = ?";
+        $stmt = $this->db->connect()->prepare($query);
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && $user['Contrasena'] === $password) {
+            // Las credenciales son correctas
+            return true;
+        } else {
+            // Las credenciales son incorrectas
+            return false;
+        }
+    }
+
 }
 ?>

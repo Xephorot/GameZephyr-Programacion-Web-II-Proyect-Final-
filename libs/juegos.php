@@ -21,25 +21,34 @@ class JuegosLib extends Model {
     }
 
     function createJuego($nombre, $descripcion, $fechaLanzamiento, $precio, $categorias) {
-        // Insertar el juego en la tabla Juegos
-        $query = "INSERT INTO Juegos (NombreJuego, Descripcion, FechaLanzamiento, Precio) VALUES (?, ?, ?, ?)";
-        $stmt = $this->db->connect()->prepare($query);
-        $stmt->execute([$nombre, $descripcion, $fechaLanzamiento, $precio]);
-        $idJuego = $this->db->connect()->lastInsertId();
+        $connection = $this->db->connect();
+        $connection->beginTransaction();
     
-        if ($idJuego) {
-            // Insertar las relaciones entre el juego y las categorías en la tabla JuegosCategorias
+        try {
+            // Insertar el juego en la tabla Juegos
+            $query = "INSERT INTO Juegos (NombreJuego, Descripcion, FechaLanzamiento, Precio) VALUES (?, ?, ?, ?)";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$nombre, $descripcion, $fechaLanzamiento, $precio]);
+            $idJuego = $connection->lastInsertId();
+    
+            // Insertar las relaciones entre el juego y las categorías existentes en la tabla JuegosCategorias
             foreach ($categorias as $idCategoria) {
                 $query = "INSERT INTO JuegosCategorias (ID_Juego, ID_Categoria) VALUES (?, ?)";
-                $stmt = $this->db->connect()->prepare($query);
+                $stmt = $connection->prepare($query);
                 $stmt->execute([$idJuego, $idCategoria]);
             }
-            return true;
-        } else {
+    
+            $connection->commit();
+    
+            return [
+                'ID_Juego' => $idJuego
+            ];
+        } catch (PDOException $e) {
+            $connection->rollBack();
             return false;
         }
     }
-    
+     
     
     function updateJuego($id, $nombre, $descripcion, $fechaLanzamiento, $precio, $categorias) {
         // Actualizar el juego en la tabla Juegos

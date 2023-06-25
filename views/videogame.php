@@ -65,7 +65,7 @@
                         <textarea class="form-control" id="descripcionJuego" name="descripcionJuego" rows="3" required><?php if (isset($juego)) { echo $juego['Descripcion']; } ?></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="fechaLanzamientoJuego" class="form-label">Fecha de Lanzamiento</label>
+                        <label for="fechaLanzamientoJuego" class="form-label">Lanzamiento</label>
                         <input type="date" class="form-control" id="fechaLanzamientoJuego" name="fechaLanzamientoJuego" value="<?php if (isset($juego)) { echo $juego['FechaLanzamiento']; } ?>" required>
                     </div>
                     <div class="mb-3">
@@ -95,7 +95,7 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Descripción</th>
-                            <th>Fecha de Lanzamiento</th>
+                            <th>Lanzamiento</th>
                             <th>Precio</th>
                             <th>Categorías</th>
                             <th>Acciones</th>

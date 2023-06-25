@@ -16,7 +16,11 @@
       <div class="col text-center align-self-center">
         <div class="buttons">
           <div class="text-container">
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laudantium, molestiae necessitatibus aliquid quod possimus odio illum sit, labore ut ipsam in! Corrupti similique quos qui temporibus error odio odit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quam error, sequi praesentium enim ut delectus repellat consequuntur qui nisi doloribus maiores aspernatur officiis excepturi dolore eligendi necessitatibus, eum alias? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, ea temporibus. Nihil asperiores pariatur ipsa officia quaerat harum quae sequi facere inventore. Ab, impedit! At molestiae ipsum natus beatae! Repudiandae!</p>
+            <p class="text">GameZephyr es una página web de videojuegos que permite explorar, buscar y seleccionar juegos. <br>
+              Ofrece una amplia colección de juegos de diferentes géneros y plataformas. Puedes buscar juegos por nombre, género, plataforma y otros filtros. Obtendrás información detallada de cada juego, incluyendo descripciones, capturas de pantalla y tráilers. <br>
+              Puedes crear listas personalizadas de juegos que te interesan. También puedes calificar y escribir reseñas sobre los juegos. <br>
+              Mantente actualizado con las últimas noticias y lanzamientos de videojuegos.  <br>
+              Disfruta de una interfaz intuitiva y atractiva. Encuentra recomendaciones basadas en tus preferencias de juego. Descarga o compra los juegos directamente desde la plataforma.</p>
           </div>
           <div class="button-container">
             <a href="login" class="button btn btn-primary btn-lg">Login</a>

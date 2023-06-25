@@ -11,14 +11,14 @@
   <div class="container">
     <?php require "views/title.php"?>
     <?php require "views/startImages.php"?>
-    <div class="row"> 
-      <?php require "views/startImages.php"?>
+    <div class="row">
       <div class="col text-center align-self-center">
-        <div class="buttons">
-          <div class="text-container">
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laudantium, molestiae necessitatibus aliquid quod possimus odio illum sit, labore ut ipsam in! Corrupti similique quos qui temporibus error odio odit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quam error, sequi praesentium enim ut delectus repellat consequuntur qui nisi doloribus maiores aspernatur officiis excepturi dolore eligendi necessitatibus, eum alias? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, ea temporibus. Nihil asperiores pariatur ipsa officia quaerat harum quae sequi facere inventore. Ab, impedit! At molestiae ipsum natus beatae! Repudiandae!</p>
-          </div>
-        </div>
+        <div class="text-container">
+            <p class="text">El Servicio SaaS (Software como Servicio) es un modelo de distribución de software basado en la nube y accesible a través de internet. Permite a los usuarios utilizar aplicaciones sin necesidad de instalarlas localmente. Se caracteriza por su modelo de suscripción, actualizaciones automáticas y escalabilidad.<br>
+            Los beneficios del SaaS incluyen costos reducidos, acceso desde cualquier lugar, soporte técnico y seguridad avanzada. <br>
+            Se compone de una aplicación central, infraestructura en la nube, capa de entrega y opciones de integración y personalización. <br>
+            El SaaS ha transformado la forma en que se consume el software, democratizando su acceso y facilitando su uso.</p>
+         </div>
       </div>
     </div>
   </div>

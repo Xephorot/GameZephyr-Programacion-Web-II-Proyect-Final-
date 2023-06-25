@@ -1,8 +1,8 @@
 <div class="text-center my-4">
-    <h4>MVC</h4>
+    <h4>GameZephyr</h4>
     <hr>
     <div>
-        <h6>Sergio Escalante</h6>
+        <h6>Unleash Your Gaming Potential</h6>
     </div>
 </div>
 <div>

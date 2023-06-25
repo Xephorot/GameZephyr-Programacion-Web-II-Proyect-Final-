@@ -16,7 +16,7 @@
       <div class="col text-center align-self-center">
         <div class="buttons">
           <div class="text-container">
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laudantium, molestiae necessitatibus aliquid quod possimus odio illum sit, labore ut ipsam in! Corrupti similique quos qui temporibus error odio odit.</p>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laudantium, molestiae necessitatibus aliquid quod possimus odio illum sit, labore ut ipsam in! Corrupti similique quos qui temporibus error odio odit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quam error, sequi praesentium enim ut delectus repellat consequuntur qui nisi doloribus maiores aspernatur officiis excepturi dolore eligendi necessitatibus, eum alias? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, ea temporibus. Nihil asperiores pariatur ipsa officia quaerat harum quae sequi facere inventore. Ab, impedit! At molestiae ipsum natus beatae! Repudiandae!</p>
           </div>
           <div class="button-container">
             <a href="login" class="button btn btn-primary btn-lg">Login</a>

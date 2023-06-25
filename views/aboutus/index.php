@@ -11,8 +11,15 @@
   <div class="container">
     <?php require "views/title.php"?>
     <?php require "views/startImages.php"?>
-    <div class="content">
-      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor metus at elit finibus, ut tempor tortor dignissim. Duis auctor scelerisque mi at ullamcorper. Nullam non lectus sit amet erat venenatis dapibus a eget odio. Aliquam vel dolor magna. Vestibulum ut metus finibus, semper nulla eget, cursus risus. Vestibulum facilisis sem ac augue vestibulum, id varius mi pellentesque. Suspendisse potenti. Nullam ac dui sapien.</p>
+    <div class="row"> 
+      <?php require "views/startImages.php"?>
+      <div class="col text-center align-self-center">
+        <div class="buttons">
+          <div class="text-container">
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laudantium, molestiae necessitatibus aliquid quod possimus odio illum sit, labore ut ipsam in! Corrupti similique quos qui temporibus error odio odit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quam error, sequi praesentium enim ut delectus repellat consequuntur qui nisi doloribus maiores aspernatur officiis excepturi dolore eligendi necessitatibus, eum alias? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, ea temporibus. Nihil asperiores pariatur ipsa officia quaerat harum quae sequi facere inventore. Ab, impedit! At molestiae ipsum natus beatae! Repudiandae!</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

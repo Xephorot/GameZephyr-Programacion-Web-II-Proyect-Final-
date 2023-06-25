@@ -1,4 +1,27 @@
-<!-- form.php -->
+<?php
+require_once 'libs/users.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['contrasena'];
+
+    $users = new UsersLib();
+
+    if (isset($_POST['create'])) {
+        $users->createUser($email, $password);
+    } elseif (isset($_POST['update'])) {
+        $userId = $_POST['userId'];
+        $users->updateUser($userId, $email, $password);
+    } elseif (isset($_POST['delete'])) {
+        $userId = $_POST['userId'];
+        $users->deleteUser($userId);
+    }
+}
+
+$users = new UsersLib();
+$usersList = $users->getUsers();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,29 +30,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Usuarios</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <?php require "views/videobackground.php"?>
 </head>
 <body>
     <div class="container mt-5">
-        <form action="process_form.php" method="POST">
+        <form action="" method="POST">
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="apellido" name="apellido" required>
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <input type="text" class="form-control" id="contrasena" name="contrasena" required>
             </div>
-            <div class="mb-3">
-                <label for="semestre" class="form-label">Semestre</label>
-                <input type="number" class="form-control" id="semestre" name="semestre" required>
-            </div>
-            <div class="mb-3">
-                <label for="edad" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="edad" name="edad" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" name="create">Crear</button>
         </form>
+
+        <h2>Usuarios registrados</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Contraseña</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($usersList as $user): ?>
+                    <tr>
+                        <td><?php echo $user['CorreoElectronico']; ?></td>
+                        <td><?php echo $user['Contrasena']; ?></td>
+                        <td>
+                            <form action="" method="POST">
+                                <input type="hidden" name="userId" value="<?php echo $user['ID_Usuario']; ?>">
+                                <input type="hidden" name="email" value="<?php echo $user['CorreoElectronico']; ?>">
+                                <input type="hidden" name="contrasena" value="<?php echo $user['Contrasena']; ?>">
+                                <button type="submit" class="btn btn-primary" name="update">Editar</button>
+                                <button type="submit" class="btn btn-danger" name="delete">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

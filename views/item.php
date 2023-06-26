@@ -27,13 +27,14 @@ $juegos = $juegosLib->getJuegos();
             flex-direction:column;
             padding: 20px;
             margin-inline: 5px;
+            color: white;
         }
     </style>
     <?php foreach ($juegos as $juego): ?>
         <div class="item">
             <div class="info">
-                <h3><?php echo $juego['NombreJuego']; ?></h3>
-                <img src="<?php echo $juego['ImagenURL']; ?>" alt="Imagen del juego">
+                <h3 class="text-center"><?php echo $juego['NombreJuego']; ?></h3>
+                <img class="rounded" src="<?php echo $juego['ImagenURL']; ?>" alt="Imagen del juego">
                 <p>Fecha de lanzamiento: <?php echo $juego['FechaLanzamiento']; ?></p>
                 <p>Precio: <?php echo $juego['Precio']; ?></p>
                 <p>Categorías: 

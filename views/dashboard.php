@@ -32,9 +32,6 @@ foreach ($categoriasList as $categoria) {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
        body {
-        margin: 0;
-        padding: 20px;
-        font-family: Arial, sans-serif;
         background-color: #000;
         }
 
@@ -88,7 +85,7 @@ foreach ($categoriasList as $categoria) {
 </head>
 <body>
     <h1>Dashboard de Categorías</h1>
-    <div class="categories">
+    <div class="categories text-white">
         <?php foreach ($categoriasList as $categoria): ?>
             <div class="category-item">
                 <h3><?php echo $categoria['NombreCategoria']; ?></h3>

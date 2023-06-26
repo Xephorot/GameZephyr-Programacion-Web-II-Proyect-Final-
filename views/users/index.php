@@ -19,7 +19,6 @@
             <div class="col-2 bg-dark text-white d-flex flex-column justify-content-between" style="min-height: 100vh;">
                 <?php require "views/menu.php"?>
                 <div class="mt-auto">
-                    <?php require "views/footer.php"?>
                 </div>
             </div>
             <div class="col-10">    

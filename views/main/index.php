@@ -10,7 +10,7 @@
 <body>
     <style>
         body{
-            background-color: #000;
+            background-color: white;
         }
     </style>
     <?php require "views/header.php"?>
@@ -19,6 +19,7 @@
             <div class="col-2 bg-dark text-white d-flex flex-column justify-content-between" style="min-height: 100vh;">
                 <?php require "views/menu.php"?>
                 <div class="mt-auto">
+                    
                 </div>
             </div>
             <div class="col-10">

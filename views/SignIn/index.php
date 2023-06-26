@@ -15,18 +15,18 @@
 
     <form action="" method="POST">
       <div class="form-container">
-        <label class="label" for="email">Email:</label>
-        <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email">
+        <label class="label text-white" for="email">Email:</label>
+        <input class="form-control bg-transparent" type="email" id="email" name="email" placeholder="Enter your email">
       </div>
   
       <div class="form-container">
-        <label class="label" for="password">Password:</label>
-        <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password">
+        <label class="label text-white" for="password">Password:</label>
+        <input class="form-control bg-transparent" type="password" id="password" name="password" placeholder="Enter your password">
       </div>
   
       <div class="form-container">
-        <label class="label" for="repeat-password">Repeat Password:</label>
-        <input class="form-control" type="password" id="repeat-password" name="repeat-password" placeholder="Repeat your password">
+        <label class="label text-white" for="repeat-password">Repeat Password:</label>
+        <input class="form-control bg-transparent" type="password" id="repeat-password" name="repeat-password" placeholder="Repeat your password">
       </div>
   
       <div class="button-container">

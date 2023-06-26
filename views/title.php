@@ -1,2 +1,2 @@
 <div class="header">GameZephyr</div>
-<div class="subheader">Unleash Your Gaming Potential</div>    
+<div class="subheader text-white">Unleash Your Gaming Potential</div>    

@@ -28,7 +28,7 @@ foreach ($categoriasList as $categoria) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard de Categorías</title>
+    <title class = "text-white">Dashboard de Categorías</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
        body {
@@ -84,7 +84,7 @@ foreach ($categoriasList as $categoria) {
     </style>
 </head>
 <body>
-    <h1>Dashboard de Categorías</h1>
+    <h1 class = "text-white">Dashboard de Categorías</h1>
     <div class="categories text-white bg-dark">
         <?php foreach ($categoriasList as $categoria): ?>
             <div class="category-item">
@@ -102,7 +102,7 @@ foreach ($categoriasList as $categoria) {
                     var chart<?php echo $categoriaId; ?> = new Chart(ctx<?php echo $categoriaId; ?>, {
                         type: 'pie',
                         data: {
-                            labels: ['Juegos', 'Otros'],
+                            labels: ['<?php echo $categoria['NombreCategoria']; ?>'],
                             datasets: [{
                                 data: [<?php echo $porcentaje; ?>, <?php echo 100 - $porcentaje; ?>],
                                 backgroundColor: [

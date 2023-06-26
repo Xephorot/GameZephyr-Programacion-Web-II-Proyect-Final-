@@ -40,7 +40,7 @@ if (isset($_GET['query'])) {
         }
     </style>
     <div class="container">
-        <h1 class="text-purple" >Resultados de búsqueda</h1>
+        <h1 class="text-purple text-white" >Resultados de búsqueda</h1>
         <?php if (count($resultados) > 0): ?>
             <?php foreach ($resultados as $juego): ?>
                 <div class="item item-css">

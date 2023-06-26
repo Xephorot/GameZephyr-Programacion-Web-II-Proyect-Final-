@@ -85,7 +85,7 @@ foreach ($categoriasList as $categoria) {
 </head>
 <body>
     <h1>Dashboard de Categorías</h1>
-    <div class="categories text-white">
+    <div class="categories text-white bg-dark">
         <?php foreach ($categoriasList as $categoria): ?>
             <div class="category-item">
                 <h3><?php echo $categoria['NombreCategoria']; ?></h3>

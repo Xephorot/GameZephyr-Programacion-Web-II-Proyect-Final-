@@ -92,12 +92,11 @@ class JuegosLib extends Model {
         $stmt->execute([$idJuego]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    function getJuegoPopularidad($idJuego) {
-        $query = "SELECT Popularidad FROM JuegosPopularidad WHERE ID_Juego = ?";
+    function buscarJuegosPorNombre($nombreJuego) {
+        $query = "SELECT * FROM Juegos WHERE NombreJuego LIKE ?";
         $stmt = $this->db->connect()->prepare($query);
-        $stmt->execute([$idJuego]);
-        return $stmt->fetch(PDO::FETCH_ASSOC)['Popularidad'];
+        $stmt->execute(['%' . $nombreJuego . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>

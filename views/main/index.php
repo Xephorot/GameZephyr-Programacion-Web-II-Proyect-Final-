@@ -19,7 +19,8 @@
                 </div>
             </div>
             <div class="col-10">
-                <h1 class="text-center mt-5">Estás en la Vista Main</h1>
+                <!-- <h1 class="text-center mt-5">Estás en la Vista Main</h1> -->
+                <?php require "views/item.php"?>
             </div>
         </div>
     </div>

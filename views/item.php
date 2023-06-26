@@ -14,6 +14,21 @@ $juegos = $juegosLib->getJuegos();
     <link rel="stylesheet" type="text/css" href="models/styles/item.css">
 </head>
 <body>
+    <style>
+        .item{
+            /* From https://css.glass */
+            background: rgba(141, 128, 128, 0.38);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(141, 128, 128, 0.3);
+            display:flex;
+            flex-direction:column;
+            padding: 20px;
+            margin-inline: 5px;
+        }
+    </style>
     <?php foreach ($juegos as $juego): ?>
         <div class="item">
             <div class="info">

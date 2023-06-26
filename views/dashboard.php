@@ -31,13 +31,58 @@ foreach ($categoriasList as $categoria) {
     <title>Dashboard de Categorías</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        .category-item {
-            margin-bottom: 10px;
+       body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #000;
         }
+
+        h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        }
+
+        .categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+
+        .category-item {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-item h3 {
+        font-size: 18px;
+        margin: 0;
+        }
+
         .chart-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+        position: relative;
+        }
+
+        .pie-chart-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        text-align: center;
+        color: #666;
+        }
+
+        .pie-chart-label .percentage {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
         }
     </style>
 </head>

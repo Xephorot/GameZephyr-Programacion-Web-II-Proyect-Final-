@@ -8,10 +8,10 @@
 <div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link btn btn-white text-dark text-center" href="users">Users</a>
+            <a class="nav-link btn btn-white text-white text-center" href="users">Users</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link btn btn-white text-dark text-center" href="videogames">VideoGames</a>
+            <a class="nav-link btn btn-white text-white info-link text-center" href="videogames">VideoGames</a>
         </li>
     </ul>
 </div>

@@ -5,15 +5,14 @@
   <title>Sign In - GameZephyr</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="models/styles/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
   <?php require "views/videobackground.php"?>
 </head>
 <body>
   <div class="container">
     
     <?php require "views/title.php"?>
-    <?php require "views/startImages.php"?>
-    
+
     <form action="" method="POST">
       <div class="form-container">
         <label class="label" for="email">Email:</label>

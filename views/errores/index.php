@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <?php require "views/videobackground.php"?>
 </head>
 <body>
+<style>
+        body{
+            background-color: #000;
+        }
+    </style>
     <?php require "views/header.php"?>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 bg-light d-flex flex-column justify-content-between" style="min-height: 100vh;">
+            <div class="col-2 bg-dark text-white d-flex flex-column justify-content-between" style="min-height: 100vh;">
                 <?php require "views/menu.php"?>
                 <div class="mt-auto">
                     <?php require "views/footer.php"?>

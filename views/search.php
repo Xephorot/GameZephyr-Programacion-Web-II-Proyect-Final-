@@ -27,8 +27,20 @@ if (isset($_GET['query'])) {
     <link rel="stylesheet" type="text/css" href="models/styles/item.css">
 </head>
 <body>
+    <style>
+        .item{
+            /* From https://css.glass */
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+    </style>
     <div class="container">
-        <h1>Resultados de búsqueda</h1>
+        <h1 class="text-purple" >Resultados de búsqueda</h1>
         <?php if (count($resultados) > 0): ?>
             <?php foreach ($resultados as $juego): ?>
                 <div class="item item-css">

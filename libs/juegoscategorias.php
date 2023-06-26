@@ -46,12 +46,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fechaLanzamientoJuego = isset($_POST['fechaLanzamientoJuego']) ? $_POST['fechaLanzamientoJuego'] : '';
     $precioJuego = isset($_POST['precioJuego']) ? $_POST['precioJuego'] : '';
     $categoriasJuego = isset($_POST['categoriasJuego']) ? $_POST['categoriasJuego'] : [];
+    $imagenURL = isset($_POST['imagenURL']) ? $_POST['imagenURL'] : [];
 
     if (isset($_POST['createJuego'])) {
-        $juegos->createJuego($nombreJuego, $descripcionJuego, $fechaLanzamientoJuego, $precioJuego, $categoriasJuego);
+        $juegos->createJuego($nombreJuego, $descripcionJuego, $fechaLanzamientoJuego, $precioJuego, $categoriasJuego, $imagenURL);
     } elseif (isset($_POST['updateJuego'])) {
         $juegoId = $_POST['juegoId'];
-        $juegos->updateJuego($juegoId, $nombreJuego, $descripcionJuego, $fechaLanzamientoJuego, $precioJuego, $categoriasJuego);
+        $juegos->updateJuego($juegoId, $nombreJuego, $descripcionJuego, $fechaLanzamientoJuego, $precioJuego, $categoriasJuego, $imagenURL,);
     } elseif (isset($_POST['deleteJuego'])) {
         $juegoId = $_POST['juegoId'];
         $juegos->deleteJuego($juegoId);

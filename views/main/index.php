@@ -12,7 +12,7 @@
     <?php require "views/header.php"?>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 bg-light d-flex flex-column justify-content-between" style="min-height: 100vh;">
+            <div class="col-2 bg-light d-flex flex-column justify-content-betwee    n" style="min-height: 100vh;">
                 <?php require "views/menu.php"?>
                 <div class="mt-auto">
                     <?php require "views/footer.php"?>
@@ -20,7 +20,13 @@
             </div>
             <div class="col-10">
                 <!-- <h1 class="text-center mt-5">Estás en la Vista Main</h1> -->
-                <?php require "views/item.php"?>
+                <?php
+                    if (isset($_GET['query'])) {
+                        require "views/search.php";
+                    } else {
+                        require "views/item.php";
+                    }
+                ?>
             </div>
         </div>
     </div>

@@ -15,7 +15,6 @@
             <div class="col-2 bg-light d-flex flex-column justify-content-betwee    n" style="min-height: 100vh;">
                 <?php require "views/menu.php"?>
                 <div class="mt-auto">
-                    <?php require "views/footer.php"?>
                 </div>
             </div>
             <div class="col-10">
@@ -27,6 +26,7 @@
                         require "views/item.php";
                     }
                 ?>
+                <?php require "views/dashboard.php"?>
             </div>
         </div>
     </div>

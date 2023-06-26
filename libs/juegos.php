@@ -98,5 +98,13 @@ class JuegosLib extends Model {
         $stmt->execute(['%' . $nombreJuego . '%']);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    function buscarJuegosPorCategoria($idCategoria) {
+        $query = "SELECT J.* FROM Juegos AS J
+                  INNER JOIN JuegosCategorias AS JC ON J.ID_Juego = JC.ID_Juego
+                  WHERE JC.ID_Categoria = ?";
+        $stmt = $this->db->connect()->prepare($query);
+        $stmt->execute([$idCategoria]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

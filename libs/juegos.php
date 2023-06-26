@@ -20,15 +20,15 @@ class JuegosLib extends Model {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    function createJuego($nombre, $descripcion, $fechaLanzamiento, $precio, $categorias) {
+    function createJuego($nombre, $descripcion, $fechaLanzamiento, $precio, $categorias, $imagenURL) {
         $connection = $this->db->connect();
         $connection->beginTransaction();
     
         try {
             // Insertar el juego en la tabla Juegos
-            $query = "INSERT INTO Juegos (NombreJuego, Descripcion, FechaLanzamiento, Precio) VALUES (?, ?, ?, ?)";
+            $query = "INSERT INTO Juegos (NombreJuego, Descripcion, FechaLanzamiento, Precio, ImagenURL) VALUES (?, ?, ?, ?, ?)";
             $stmt = $connection->prepare($query);
-            $stmt->execute([$nombre, $descripcion, $fechaLanzamiento, $precio]);
+            $stmt->execute([$nombre, $descripcion, $fechaLanzamiento, $precio, $imagenURL]);
             $idJuego = $connection->lastInsertId();
     
             // Insertar las relaciones entre el juego y las categorías existentes en la tabla JuegosCategorias
@@ -41,34 +41,37 @@ class JuegosLib extends Model {
             $connection->commit();
     
             return [
-                'ID_Juego' => $idJuego
+                'ID_Juego' => $idJuego  
             ];
         } catch (PDOException $e) {
             $connection->rollBack();
             return false;
         }
-    }
-     
-    
-    function updateJuego($id, $nombre, $descripcion, $fechaLanzamiento, $precio, $categorias) {
-        // Actualizar el juego en la tabla Juegos
-        $query = "UPDATE Juegos SET NombreJuego = ?, Descripcion = ?, FechaLanzamiento = ?, Precio = ? WHERE ID_Juego = ?";
-        $stmt = $this->db->connect()->prepare($query);
-        $stmt->execute([$nombre, $descripcion, $fechaLanzamiento, $precio, $id]);
+    }   
 
+
+    function updateJuego($id, $nombre, $descripcion, $fechaLanzamiento, $precio, $categorias, $imagenURL) {
+        // Actualizar el juego en la tabla Juegos
+        $query = "UPDATE Juegos SET NombreJuego = ?, Descripcion = ?, FechaLanzamiento = ?, Precio = ?, ImagenURL = ? WHERE ID_Juego = ?";
+        $stmt = $this->db->connect()->prepare($query);
+        $stmt->execute([$nombre, $descripcion, $fechaLanzamiento, $precio, $imagenURL, $id]);
+    
         // Eliminar las relaciones del juego con las categorías existentes en la tabla JuegosCategorias
         $query = "DELETE FROM JuegosCategorias WHERE ID_Juego = ?";
         $stmt = $this->db->connect()->prepare($query);
         $stmt->execute([$id]);
-
+    
         // Insertar las nuevas relaciones entre el juego y las categorías en la tabla JuegosCategorias
         foreach ($categorias as $idCategoria) {
             $query = "INSERT INTO JuegosCategorias (ID_Juego, ID_Categoria) VALUES (?, ?)";
             $stmt = $this->db->connect()->prepare($query);
             $stmt->execute([$id, $idCategoria]);
         }
+    
+        return true;
     }
     
+
     function deleteJuego($id) {
         // Eliminar las relaciones del juego con las categorías en la tabla JuegosCategorias
         $query = "DELETE FROM JuegosCategorias WHERE ID_Juego = ?";

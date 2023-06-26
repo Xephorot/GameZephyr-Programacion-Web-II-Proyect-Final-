@@ -72,6 +72,14 @@
                         <label for="precioJuego" class="form-label">Precio</label>
                         <input type="number" class="form-control" id="precioJuego" name="precioJuego" value="<?php if (isset($juego)) { echo $juego['Precio']; } ?>" required>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="imagenURL" class="form-label">URL de la Imagen</label>
+                        <input type="text" class="form-control" id="imagenURL" name="imagenURL" value="<?php if (isset($juego)) { echo $juego['ImagenURL']; } ?>" required>
+                    </div>
+
+
+
                     <div class="mb-3">
                         <label for="categoriasJuego" class="form-label">Categorías</label>
                         <select multiple class="form-control" id="categoriasJuego" name="categoriasJuego[]" required>
@@ -94,9 +102,10 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Descripción</th>
+                            <th>Descripción</th>    
                             <th>Lanzamiento</th>
                             <th>Precio</th>
+                            <th>Imagen</th>
                             <th>Categorías</th>
                             <th>Acciones</th>
                         </tr>
@@ -109,6 +118,7 @@
                                 <td><?php echo $juego['Descripcion']; ?></td>
                                 <td><?php echo $juego['FechaLanzamiento']; ?></td>
                                 <td><?php echo $juego['Precio']; ?></td>
+                                <td><img src="<?php echo $juego['ImagenURL']; ?>" alt="Imagen del juego" style="width: 100px;"></td>
                                 <td>
                                     <?php
                                     $juegoCategorias = $juegos->getJuegoCategorias($juego['ID_Juego']);
@@ -128,6 +138,7 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
